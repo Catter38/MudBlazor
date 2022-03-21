@@ -367,5 +367,16 @@ namespace MudBlazor
             _ = SetTextAsync(text, true);
 
         }
+
+        protected override async Task OnInitializedAsync()
+        {
+            RestoreScrollPosition();
+            await CoerceTextToValue();
+            
+            UpdateIcon();
+            StateHasChanged();
+            
+            await base.OnInitializedAsync();
+        }
     }
 }
