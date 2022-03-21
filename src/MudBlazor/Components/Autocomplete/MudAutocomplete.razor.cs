@@ -174,6 +174,8 @@ namespace MudBlazor
             var text = GetItemString(Value);
             if (!string.IsNullOrWhiteSpace(text))
                 Text = text;
+            
+            StateHasChanged();
         }
 
         private Timer _timer;
