@@ -168,14 +168,15 @@ namespace MudBlazor
             }
         }
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             UpdateIcon();
             var text = GetItemString(Value);
             if (!string.IsNullOrWhiteSpace(text))
                 Text = text;
 
-            OnSearch();
+            await ToggleMenu();
+            await ToggleMenu();
         }
 
         private Timer _timer;
