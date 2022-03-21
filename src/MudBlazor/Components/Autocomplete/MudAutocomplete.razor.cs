@@ -174,6 +174,8 @@ namespace MudBlazor
             var text = GetItemString(Value);
             if (!string.IsNullOrWhiteSpace(text))
                 Text = text;
+
+            OnSearch();
         }
 
         private Timer _timer;
@@ -366,17 +368,6 @@ namespace MudBlazor
                 return;
             _ = SetTextAsync(text, true);
 
-        }
-
-        protected override async Task OnInitializedAsync()
-        {
-            RestoreScrollPosition();
-            await CoerceTextToValue();
-            
-            UpdateIcon();
-            StateHasChanged();
-            
-            await base.OnInitializedAsync();
         }
     }
 }
