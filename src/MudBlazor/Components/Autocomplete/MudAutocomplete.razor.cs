@@ -171,7 +171,6 @@ namespace MudBlazor
         protected override void OnInitialized()
         {
             UpdateIcon();
-            
             var text = GetItemString(Value);
             if (!string.IsNullOrWhiteSpace(text))
                 Text = text;
